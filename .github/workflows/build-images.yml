@@ -1,0 +1,29 @@
+name: Build photo assets
+on:
+  push:
+    paths:
+      - assets.ready
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild JPEG assets
+        run: |
+          set -euo pipefail
+          mkdir -p images
+          for stem in 000029790023 000029810016 000033010025 000033270004 000033280007 000033280009; do
+            cat bridge/"$stem".*.part | base64 -d > "images/$stem.jpg"
+          done
+          rm -rf bridge assets.ready
+      - name: Commit assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images bridge assets.ready
+          git commit -m "Add photography assets"
+          git push
