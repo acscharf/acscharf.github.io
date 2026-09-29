@@ -12,37 +12,60 @@
   <header class="site-header">
     <a class="name" href="/">Alex Scharf</a>
     <nav>
-      <a href="#photos">Photos</a>
+      <a href="/mountains/">Mountains</a>
+      <a href="/places/">Places</a>
+      <a href="/people/">People</a>
       <a href="#about">About</a>
     </nav>
   </header>
 
-  <main id="photos">
+  <main>
     <section class="intro">
       <p>Film photographs</p>
       <p>Tokyo, Japan</p>
     </section>
 
     <figure class="hero-photo">
-      <img src="/images/000033270004.jpg" alt="Mountain ridge in the Japanese Alps at sunrise">
+      <a href="/mountains/">
+        <img src="/images/000033270004.jpg" alt="Mountain ridge in the Japanese Alps">
+      </a>
     </figure>
 
-    <section class="pair">
-      <figure class="portrait">
-        <img src="/images/000033280009.jpg" alt="Mountain hut above clouds">
-      </figure>
-      <figure class="portrait lower">
-        <img src="/images/000033280007.jpg" alt="Orange alpine flowers">
-      </figure>
+    <section class="collections">
+      <p class="section-kicker">Collections</p>
+      <div class="collection-grid">
+        <a class="collection-card" href="/mountains/">
+          <img src="/images/000033280009.jpg" alt="">
+          <div class="collection-meta">
+            <span>Mountains</span>
+            <span>→</span>
+          </div>
+        </a>
+
+        <a class="collection-card" href="/places/">
+          <img src="/images/000029810016.jpg" alt="">
+          <div class="collection-meta">
+            <span>Places</span>
+            <span>→</span>
+          </div>
+        </a>
+
+        <a class="collection-card" href="/people/">
+          <img src="/images/000033010025.jpg" alt="">
+          <div class="collection-meta">
+            <span>People</span>
+            <span>→</span>
+          </div>
+        </a>
+      </div>
     </section>
 
-    <figure class="wide breathing-room">
-      <img src="/images/000029810016.jpg" alt="Harbor at evening">
-    </figure>
-
-    <section class="single-right">
-      <figure class="portrait bw">
-        <img src="/images/000033010025.jpg" alt="Black and white market scene">
+    <section class="home-sequence">
+      <figure class="sequence-left">
+        <img src="/images/000033280007.jpg" alt="Orange alpine flowers">
+      </figure>
+      <figure class="sequence-right">
+        <img src="/images/000029790023.jpg" alt="Outdoor bath">
       </figure>
     </section>
 
@@ -59,7 +82,6 @@
     <span>© <span id="year"></span> Alex Scharf</span>
     <span>Tokyo</span>
   </footer>
-
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
