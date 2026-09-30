@@ -8,20 +8,35 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="topbar">
+  <header class="site-header">
     <a class="brand" href="/">Alex Scharf</a>
-    <nav>
-      <a href="/mountains/">Mountains</a>
-      <a class="active" href="/places/">Places</a>
-      <a href="/people/">People</a>
+    <nav aria-label="Primary">
+      <a class="active" href="/">Photographs</a>
+      <a href="/about/">About</a>
     </nav>
   </header>
-  <main class="collection-page">
-    <div class="collection-meta"><span>02</span><span>Places</span><span>Film photographs</span></div>
-    <figure class="photo full"><img src="/images/000029810016.jpg" alt="Harbor at evening"></figure>
-    <figure class="photo medium right"><img src="/images/000029790023.jpg" alt="Outdoor bath"></figure>
-    <figure class="photo small left"><img src="/images/000033010025.jpg" alt="Market scene"></figure>
+
+  <main class="series-page">
+    <header class="series-header">
+      <a href="/">Photographs</a>
+      <span>/</span>
+      <strong>Places</strong>
+      <span class="count">3 photographs</span>
+    </header>
+
+    <section class="gallery-grid">
+      <figure><img src="/images/000029810016.jpg" alt="Harbor at evening"></figure>
+      <figure class="narrow"><img src="/images/000029790023.jpg" alt="Outdoor bath"></figure>
+      <figure><img src="/images/000033010025.jpg" alt="Market scene"></figure>
+    </section>
+
+    <nav class="series-nav" aria-label="Collections">
+      <a href="/mountains/">Mountains</a>
+      <a class="current" href="/places/">Places</a>
+      <a href="/people/">People</a>
+    </nav>
   </main>
-  <footer class="site-footer"><a href="/">← Index</a><span>Alex Scharf</span></footer>
+
+  <footer class="site-footer"><span>© Alex Scharf</span><a href="/">Index</a></footer>
 </body>
 </html>
