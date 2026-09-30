@@ -19,7 +19,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%;height:auto}
 figure,h1,p{margin:0}
 
-.site-header,.home-page,.work-index,.series-page,.about-page,.site-footer{
+.site-header,.home-page,.series-page,.about-page,.site-footer{
   width:min(calc(100% - 52px),var(--max));
   margin:0 auto;
 }
@@ -43,25 +43,25 @@ figure,h1,p{margin:0}
 
 /* Home */
 .home-hero{
-  width:88%;
-  margin:0 auto 12vw;
+  width:86%;
+  margin:0 auto 11vw;
 }
 .home-hero img{
   width:100%;
-  max-height:72vh;
+  max-height:68vh;
   object-fit:cover;
 }
 
 .home-collection{
   border-top:1px solid var(--rule);
   padding-top:13px;
-  margin-bottom:12vw;
+  margin-bottom:10vw;
 }
 .collection-copy{
   display:grid;
   grid-template-columns:34px 1fr;
   gap:10px;
-  margin-bottom:26px;
+  margin-bottom:22px;
   color:var(--muted);
 }
 .collection-copy a{
@@ -75,31 +75,35 @@ figure,h1,p{margin:0}
   align-items:start;
 }
 .mountains-pair{
-  width:61%;
-  margin-left:8%;
-  grid-template-columns:minmax(0,1.55fr) minmax(0,.72fr);
-  gap:5vw;
+  width:55%;
+  margin-left:9%;
+  grid-template-columns:1.5fr .72fr;
+  gap:4vw;
 }
 .places-pair{
-  width:58%;
+  width:53%;
   margin-left:auto;
-  margin-right:7%;
-  grid-template-columns:minmax(0,.66fr) minmax(0,1.45fr);
-  gap:4.5vw;
+  margin-right:9%;
+  grid-template-columns:.68fr 1.45fr;
+  gap:3.8vw;
 }
-.pair-large,.pair-small{width:100%}
-.pair-lower{margin-top:6.5vw}
-.editorial-pair img{
-  width:100%;
-  height:auto;
-}
-.editorial-pair a:hover img,.people-feature a:hover img{opacity:.96}
+.pair-lower{margin-top:5vw}
+.pair-large img{max-height:360px;width:auto;max-width:100%;object-fit:contain}
+.pair-small img{max-height:225px;width:auto;max-width:100%;object-fit:contain}
 
-.people-feature{
-  width:34%;
-  margin-left:17%;
+.people-pair{
+  width:48%;
+  margin-left:15%;
+  display:grid;
+  grid-template-columns:1.35fr .72fr;
+  gap:4vw;
+  align-items:start;
 }
-.people-feature img{width:100%;height:auto}
+.people-main img{max-height:330px;width:auto;max-width:100%;object-fit:contain}
+.people-small{margin-top:5vw}
+.people-small img{max-height:210px;width:auto;max-width:100%;object-fit:contain}
+
+.editorial-pair a:hover img,.people-pair a:hover img{opacity:.96}
 
 /* Collection pages */
 .series-header{
@@ -115,11 +119,12 @@ figure,h1,p{margin:0}
 .gallery-grid{
   display:grid;
   grid-template-columns:repeat(12,1fr);
-  gap:70px 22px;
+  gap:74px 22px;
   max-width:1040px;
   margin:0 auto 96px;
   align-items:start;
 }
+.gallery-grid figure{display:flex;justify-content:center}
 .gallery-grid figure:nth-child(1){grid-column:2 / span 7}
 .gallery-grid figure:nth-child(2){grid-column:7 / span 5}
 .gallery-grid figure:nth-child(3){grid-column:3 / span 4}
@@ -129,6 +134,19 @@ figure,h1,p{margin:0}
   height:auto;
   max-height:500px;
   object-fit:contain;
+}
+.gallery-grid.expanded .remote-large{
+  grid-column:6 / span 6;
+  margin-top:12px;
+}
+.gallery-grid.expanded .remote-small{
+  grid-column:2 / span 4;
+}
+.gallery-grid.people-gallery .remote-large{
+  grid-column:7 / span 5;
+}
+.gallery-grid.people-gallery .remote-small{
+  grid-column:2 / span 4;
 }
 .series-nav{
   border-top:1px solid var(--rule);
@@ -163,44 +181,52 @@ figure,h1,p{margin:0}
 }
 
 @media(max-width:800px){
-  .site-header,.home-page,.work-index,.series-page,.about-page,.site-footer{width:calc(100% - 28px)}
+  .site-header,.home-page,.series-page,.about-page,.site-footer{width:calc(100% - 28px)}
   .site-header{height:60px}
   .index-intro{padding-bottom:24px}
-  .home-hero{
-    width:100%;
-    margin-bottom:24vw;
-  }
-  .home-hero img{
-    max-height:none;
-    object-fit:contain;
-  }
-  .home-collection{margin-bottom:26vw}
+  .home-hero{width:100%;margin-bottom:22vw}
+  .home-hero img{max-height:none;object-fit:contain}
+  .home-collection{margin-bottom:24vw}
   .collection-copy{margin-bottom:18px}
-  .mountains-pair,
-  .places-pair{
-    width:86%;
+  .mountains-pair,.places-pair{
+    width:82%;
     margin:0 auto;
-    grid-template-columns:1.45fr .72fr;
-    gap:18px;
+    gap:16px;
   }
+  .mountains-pair{grid-template-columns:1.45fr .72fr}
   .places-pair{grid-template-columns:.72fr 1.45fr}
-  .pair-lower{margin-top:13vw}
-  .people-feature{
-    width:62%;
+  .pair-lower{margin-top:12vw}
+  .pair-large img{max-height:260px}
+  .pair-small img{max-height:160px}
+  .people-pair{
+    width:78%;
     margin-left:auto;
-    margin-right:6%;
+    margin-right:4%;
+    grid-template-columns:1.35fr .72fr;
+    gap:16px;
   }
+  .people-main img{max-height:235px}
+  .people-small{margin-top:12vw}
+  .people-small img{max-height:150px}
   .series-header{grid-template-columns:auto 12px 1fr;padding-bottom:34px}
   .series-header .count{grid-column:3;text-align:left;margin-top:3px}
-  .gallery-grid{
+  .gallery-grid,.gallery-grid.people-gallery{
     grid-template-columns:1fr 1fr;
-    gap:32px 16px;
+    gap:38px 16px;
     margin-bottom:64px;
   }
   .gallery-grid figure:nth-child(1),
   .gallery-grid figure:nth-child(2),
-  .gallery-grid figure:nth-child(3){grid-column:auto}
-  .gallery-grid figure:nth-child(1){grid-column:1 / -1;width:82%;justify-self:center}
+  .gallery-grid figure:nth-child(3),
+  .gallery-grid.expanded .remote-large,
+  .gallery-grid.expanded .remote-small,
+  .gallery-grid.people-gallery .remote-large,
+  .gallery-grid.people-gallery .remote-small{
+    grid-column:auto;
+    width:100%;
+    margin-top:0;
+  }
+  .gallery-grid figure:nth-child(1){grid-column:1 / -1;width:80%;justify-self:center}
   .gallery-grid img{max-height:none}
   .about-page{grid-template-columns:1fr;gap:26px;padding-top:32px}
   .about-copy{font-size:17px}
