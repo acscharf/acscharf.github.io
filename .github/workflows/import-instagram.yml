@@ -1,0 +1,49 @@
+name: Import Instagram selections
+on:
+  push:
+    paths:
+      - .github/workflows/import-instagram.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - name: Download selected frames
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/ig images
+          curl -fL 'https://scontent-ord5-1.cdninstagram.com/v/t51.82787-15/800603410_18070027265735970_5017887133016490753_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzk4MTI0MjUwMzAwNDgyNDA3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTk2Ny5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=1BEfPqojQJ8Q7kNvwEyZvvo&_nc_oc=Adq1nE3GgKS3EYCk8DiPiVsy8aHV3LLDW8-QN8GP35l5hcIfEvq99OA0v-mhsoMH5VU&_nc_zt=23&_nc_ht=scontent-ord5-1.cdninstagram.com&_nc_gid=VgSzBml0kclkRxvQMg0Dsg&_nc_ss=7ba8c&oh=00_AQMwKGoKVFAT9Qb1UN3iO_TBuXNKeMsVzbdGBuMTv1vi-Q&oe=6AC2DE1C' -o /tmp/ig/ig-keelung-1.jpg
+          curl -fL 'https://scontent-ord5-1.cdninstagram.com/v/t51.82787-15/799947351_18070027277735970_7951620034256050355_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=Mzk4MTI0MjUwNTkyNDA1ODUzNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTYyNy5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=RWlEIys98QUQ7kNvwGwlBiA&_nc_oc=AdqQGY7FTkuWw6w1YC9GdBw588UtTO3iMw3_O7ycHfkJmRqJUWQ8fB185VrWfFBq6XU&_nc_zt=23&_nc_ht=scontent-ord5-1.cdninstagram.com&_nc_gid=VgSzBml0kclkRxvQMg0Dsg&_nc_ss=7ba8c&oh=00_AQPzt1CmrQt3ziHMvCVKNa8QxhJdZNAlyywHETnkdY99kg&oe=6AC2D274' -o /tmp/ig/ig-keelung-2.jpg
+          curl -fL 'https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/785748315_18068646389735970_7388370926427968117_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=Mzk3NDQzNzQzMDkyNDc3MzM3Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjA0OC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=ANaIPC29poQQ7kNvwH-dbah&_nc_oc=AdpvQgVjyPhycwWoauVAXWQ2kRi7cYRmlRs9WfgjUmS2pHNewy9Ag6umDW6NuBGXDUw&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&_nc_gid=0XxqA_A_3wBWsM2ZXx1z0Q&_nc_ss=7ba8c&oh=00_AQPTJVoSeRnku65bFCahY4FnEi4jDCXm0g2CQi2muzGojg&oe=6AC2D133' -o /tmp/ig/ig-hike-1.jpg
+          curl -fL 'https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/789398269_18068646404735970_2179306890880912132_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzk3NDQzNzQzMzExNDEzNDI4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTc2OS5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=LiAFqFhT8f8Q7kNvwG_gYqi&_nc_oc=AdpeaScCXPJgDmJNFWKJkiAOkm82gdSWeG46Yl0ERQjhcYyLXlyq4N0DWHZOMYvtsGw&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&_nc_gid=0XxqA_A_3wBWsM2ZXx1z0Q&_nc_ss=7ba8c&oh=00_AQM_NRh5o59Pv-klIDLMNXHwnTTw2RyWdYbzpO57L5kDEQ&oe=6AC2C35C' -o /tmp/ig/ig-hike-2.jpg
+          curl -fL 'https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/777947352_18067134512735970_5844206898782127449_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzk2Njc5MTA3MTAwMjUwMTg2MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjA0OC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=t-uW3DIlaQ0Q7kNvwFZoQ0F&_nc_oc=AdqJpWbGVikdC39_h68G1ml9NifjZQdnpPrGFPn4JZPu4Fd8HRGZsPt5heOgW_wzXEI&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_gid=-lTkGU2si7Odag2Cu5AGng&_nc_ss=7ba8c&oh=00_AQNIi7a1CH5J1n2iSAeH43qWuOMMWzpA_h1jTL9YBm_VEQ&oe=6AC2D99B' -o /tmp/ig/ig-street-1.jpg
+          curl -fL 'https://scontent-atl3-1.cdninstagram.com/v/t51.82787-15/778159080_18067134542735970_2684104191334541453_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=Mzk2Njc5MTA5MDgwNzk0NzI2Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTk3Ni5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=YlhdN7qZCykQ7kNvwHbXXJW&_nc_oc=AdopOscTTyGfaCX4rhhse-XqpNUEAO_euQVKprGHalki5egNvlLXcRqbix8Tnhq3mUM&_nc_zt=23&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_gid=-lTkGU2si7Odag2Cu5AGng&_nc_ss=7ba8c&oh=00_AQO7wOHb3v13_vWAh_-bJLiByt0iJyB9cz5xumJjhRUacA&oe=6AC2ACC0' -o /tmp/ig/ig-street-2.jpg
+          curl -fL 'https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/777947350_18067127432735970_5182202938207834460_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=Mzk2Njc1NTc3NDE4MDk2NjQ0Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjA0OC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=P2Tq-Y-d48wQ7kNvwGVgh_n&_nc_oc=AdqBoqbpyhTm0Kv4VRxSkhyR2d2EBsmvKy451W_VwreAv1sbr_Fa6OiZS3PoLbnHLAg&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=JfMt_0jkyHeheUf3BvEhpw&_nc_ss=7b289&oh=00_AQP9kD6YAED3PFWXHJYyy9OQHyKw966-yVciJDl4VMBESg&oe=6AC2D463' -o /tmp/ig/ig-bw-1.jpg
+          curl -fL 'https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/779200897_18067127441735970_3583139906633797620_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzk2Njc1NTc3NjQyOTIzNDAyNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjA0OC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=w4vX5ozRiBIQ7kNvwHRnSt-&_nc_oc=Adpg4m4mnXXDdvv573DGVbgkA7nmaAYxKjA41trc206TWQKLtB_xrvJZU2E7kavnlW4&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=JfMt_0jkyHeheUf3BvEhpw&_nc_ss=7b289&oh=00_AQOdRyFANu_fC_X5uyVLWCoDQSzauApDFUz12mmlgGro2w&oe=6AC2BB86' -o /tmp/ig/ig-bw-2.jpg
+      - name: Normalize for site
+        run: |
+          python - <<'PY'
+          from PIL import Image, ImageOps
+          from pathlib import Path
+          for p in Path('/tmp/ig').glob('*.jpg'):
+              im = Image.open(p)
+              im = ImageOps.exif_transpose(im).convert('RGB')
+              im.thumbnail((1800, 1800), Image.Resampling.LANCZOS)
+              im.save(Path('images')/p.name, 'JPEG', quality=84, optimize=True, progressive=True)
+          PY
+      - name: Commit imported images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/ig-*.jpg
+          git commit -m "Add selected Instagram photographs"
+          git push
