@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alex Scharf</title>
   <meta name="description" content="Film photographs by Alex Scharf, based in Tokyo.">
-  <meta name="theme-color" content="#f7f6f2">
+  <meta name="theme-color" content="#f4f3ef">
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <a class="name" href="/">Alex Scharf</a>
+<body class="home">
+  <header class="topbar">
+    <a class="brand" href="/">Alex Scharf</a>
     <nav>
       <a href="/mountains/">Mountains</a>
       <a href="/places/">Places</a>
@@ -20,67 +20,46 @@
   </header>
 
   <main>
-    <section class="intro">
-      <p>Film photographs</p>
-      <p>Tokyo, Japan</p>
-    </section>
-
-    <figure class="hero-photo">
-      <a href="/mountains/">
-        <img src="/images/000033270004.jpg" alt="Mountain ridge in the Japanese Alps">
-      </a>
+    <figure class="opening">
+      <img src="/images/000033270004.jpg" alt="Mountain ridge in the Japanese Alps">
     </figure>
 
-    <section class="collections">
-      <p class="section-kicker">Collections</p>
-      <div class="collection-grid">
-        <a class="collection-card" href="/mountains/">
-          <img src="/images/000033280009.jpg" alt="">
-          <div class="collection-meta">
-            <span>Mountains</span>
-            <span>→</span>
-          </div>
-        </a>
-
-        <a class="collection-card" href="/places/">
-          <img src="/images/000029810016.jpg" alt="">
-          <div class="collection-meta">
-            <span>Places</span>
-            <span>→</span>
-          </div>
-        </a>
-
-        <a class="collection-card" href="/people/">
-          <img src="/images/000033010025.jpg" alt="">
-          <div class="collection-meta">
-            <span>People</span>
-            <span>→</span>
-          </div>
-        </a>
-      </div>
+    <section class="index-row" aria-label="Site introduction">
+      <span>Film photographs</span>
+      <span>Tokyo</span>
+      <span>2026—</span>
     </section>
 
-    <section class="home-sequence">
-      <figure class="sequence-left">
-        <img src="/images/000033280007.jpg" alt="Orange alpine flowers">
-      </figure>
-      <figure class="sequence-right">
-        <img src="/images/000029790023.jpg" alt="Outdoor bath">
-      </figure>
+    <section class="collection-feature feature-left">
+      <a href="/mountains/">
+        <figure><img src="/images/000033280009.jpg" alt="Mountain hut above clouds"></figure>
+        <div class="feature-label"><span>01</span><strong>Mountains</strong><span>View collection ↗</span></div>
+      </a>
     </section>
 
-    <section id="about" class="about">
-      <p class="label">About</p>
-      <div>
-        <p>Alex Scharf is based in Tokyo.</p>
-        <p>He works in marketing, product, and education.</p>
-      </div>
+    <section class="collection-feature feature-right">
+      <a href="/places/">
+        <figure><img src="/images/000029810016.jpg" alt="Harbor at evening"></figure>
+        <div class="feature-label"><span>02</span><strong>Places</strong><span>View collection ↗</span></div>
+      </a>
+    </section>
+
+    <section class="collection-feature feature-left feature-small">
+      <a href="/people/">
+        <figure><img src="/images/000033010025.jpg" alt="Black and white market scene"></figure>
+        <div class="feature-label"><span>03</span><strong>People</strong><span>View collection ↗</span></div>
+      </a>
+    </section>
+
+    <section id="about" class="about-minimal">
+      <span>About</span>
+      <p>Alex Scharf is based in Tokyo and works in marketing, product, and education.</p>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <span>© <span id="year"></span> Alex Scharf</span>
-    <span>Tokyo</span>
+    <span>Film photographs</span>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
