@@ -90,20 +90,18 @@ figure,h1,p{margin:0}
 .pair-lower{margin-top:5vw}
 .pair-large img{max-height:360px;width:auto;max-width:100%;object-fit:contain}
 .pair-small img{max-height:225px;width:auto;max-width:100%;object-fit:contain}
+.editorial-pair a:hover img,.people-feature a:hover img{opacity:.96}
 
-.people-pair{
-  width:48%;
-  margin-left:15%;
-  display:grid;
-  grid-template-columns:1.35fr .72fr;
-  gap:4vw;
-  align-items:start;
+.people-feature{
+  width:36%;
+  margin-left:16%;
 }
-.people-main img{max-height:330px;width:auto;max-width:100%;object-fit:contain}
-.people-small{margin-top:5vw}
-.people-small img{max-height:210px;width:auto;max-width:100%;object-fit:contain}
-
-.editorial-pair a:hover img,.people-pair a:hover img{opacity:.96}
+.people-feature img{
+  width:auto;
+  max-width:100%;
+  max-height:300px;
+  object-fit:contain;
+}
 
 /* Collection pages */
 .series-header{
@@ -134,19 +132,6 @@ figure,h1,p{margin:0}
   height:auto;
   max-height:500px;
   object-fit:contain;
-}
-.gallery-grid.expanded .remote-large{
-  grid-column:6 / span 6;
-  margin-top:12px;
-}
-.gallery-grid.expanded .remote-small{
-  grid-column:2 / span 4;
-}
-.gallery-grid.people-gallery .remote-large{
-  grid-column:7 / span 5;
-}
-.gallery-grid.people-gallery .remote-small{
-  grid-column:2 / span 4;
 }
 .series-nav{
   border-top:1px solid var(--rule);
@@ -198,33 +183,24 @@ figure,h1,p{margin:0}
   .pair-lower{margin-top:12vw}
   .pair-large img{max-height:260px}
   .pair-small img{max-height:160px}
-  .people-pair{
-    width:78%;
+  .people-feature{
+    width:62%;
     margin-left:auto;
-    margin-right:4%;
-    grid-template-columns:1.35fr .72fr;
-    gap:16px;
+    margin-right:6%;
   }
-  .people-main img{max-height:235px}
-  .people-small{margin-top:12vw}
-  .people-small img{max-height:150px}
+  .people-feature img{max-height:220px}
   .series-header{grid-template-columns:auto 12px 1fr;padding-bottom:34px}
   .series-header .count{grid-column:3;text-align:left;margin-top:3px}
-  .gallery-grid,.gallery-grid.people-gallery{
+  .gallery-grid{
     grid-template-columns:1fr 1fr;
     gap:38px 16px;
     margin-bottom:64px;
   }
   .gallery-grid figure:nth-child(1),
   .gallery-grid figure:nth-child(2),
-  .gallery-grid figure:nth-child(3),
-  .gallery-grid.expanded .remote-large,
-  .gallery-grid.expanded .remote-small,
-  .gallery-grid.people-gallery .remote-large,
-  .gallery-grid.people-gallery .remote-small{
+  .gallery-grid figure:nth-child(3){
     grid-column:auto;
     width:100%;
-    margin-top:0;
   }
   .gallery-grid figure:nth-child(1){grid-column:1 / -1;width:80%;justify-self:center}
   .gallery-grid img{max-height:none}
