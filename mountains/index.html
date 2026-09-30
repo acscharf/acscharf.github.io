@@ -8,20 +8,35 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="topbar">
+  <header class="site-header">
     <a class="brand" href="/">Alex Scharf</a>
-    <nav>
-      <a class="active" href="/mountains/">Mountains</a>
+    <nav aria-label="Primary">
+      <a class="active" href="/">Photographs</a>
+      <a href="/about/">About</a>
+    </nav>
+  </header>
+
+  <main class="series-page">
+    <header class="series-header">
+      <a href="/">Photographs</a>
+      <span>/</span>
+      <strong>Mountains</strong>
+      <span class="count">3 photographs</span>
+    </header>
+
+    <section class="gallery-grid">
+      <figure><img src="/images/000033270004.jpg" alt="Mountain ridge in the Japanese Alps"></figure>
+      <figure><img src="/images/000033280009.jpg" alt="Mountain hut above clouds"></figure>
+      <figure class="narrow"><img src="/images/000033280007.jpg" alt="Orange alpine flowers"></figure>
+    </section>
+
+    <nav class="series-nav" aria-label="Collections">
+      <a class="current" href="/mountains/">Mountains</a>
       <a href="/places/">Places</a>
       <a href="/people/">People</a>
     </nav>
-  </header>
-  <main class="collection-page">
-    <div class="collection-meta"><span>01</span><span>Mountains</span><span>Film photographs</span></div>
-    <figure class="photo full"><img src="/images/000033270004.jpg" alt="Mountain ridge"></figure>
-    <figure class="photo medium left"><img src="/images/000033280009.jpg" alt="Mountain hut above clouds"></figure>
-    <figure class="photo small right"><img src="/images/000033280007.jpg" alt="Alpine flowers"></figure>
   </main>
-  <footer class="site-footer"><a href="/">← Index</a><span>Alex Scharf</span></footer>
+
+  <footer class="site-footer"><span>© Alex Scharf</span><a href="/">Index</a></footer>
 </body>
 </html>
